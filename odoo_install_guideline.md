@@ -86,6 +86,9 @@ This guide provides a manual setup process for installing Odoo on a fresh server
 
 ```bash
   sudo adduser --system --home=/opt/odoo --group odoo
+  # if you want to add a user to a group. in this example odoo is group
+  sudo gpasswd -a user_name odoo  
+  sudo chown -R odoo:odoo /opt/odoo
  ```
 
 ---
@@ -124,6 +127,7 @@ This guide provides a manual setup process for installing Odoo on a fresh server
     cd /opt/odoo
     python3 -m venv venv # or python3.10 whatever the version.
     source venv/bin/activate
+    sudo apt-get install libpq-dev
    ```
 
 ---
